@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { Button } from "./components/atoms/button/button";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,17 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <div className="flex gap-6">
+        <Button
+          title="LIVE SITE"
+          link=""
+          backgroundColor="bg-client-green-01"
+          textColor="text-pf-black-01"
+        />
+        <Button title="LIVE SITE" link="" />
+        <Button title="LIVE SITE" link="" />
+      </div>
+      <Button title="LIVE stinky" link="" />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
