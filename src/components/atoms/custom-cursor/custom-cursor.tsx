@@ -12,32 +12,26 @@ const CustomCursor = () => {
     const handleMouseMove = (e: MouseEvent) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
+
+      // Detect hover using elementFromPoint
+      const el = document.elementFromPoint(
+        e.clientX,
+        e.clientY
+      ) as HTMLElement | null;
+      if (el?.closest("[data-hover='true']")) {
+        setHovering(true);
+      } else {
+        setHovering(false);
+      }
     };
+
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Hover detection
-  useEffect(() => {
-    const handleMouseEnter = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.dataset.hover === "true") setHovering(true);
-    };
-    const handleMouseLeave = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.dataset.hover === "true") setHovering(false);
-    };
-    document.addEventListener("mouseover", handleMouseEnter);
-    document.addEventListener("mouseout", handleMouseLeave);
-    return () => {
-      document.removeEventListener("mouseover", handleMouseEnter);
-      document.removeEventListener("mouseout", handleMouseLeave);
-    };
-  }, []);
-
   // Smooth cursor animation
   const animate = () => {
-    pos.current.x += (mouse.current.x - pos.current.x) * 0.2; // 0.2 = lag speed
+    pos.current.x += (mouse.current.x - pos.current.x) * 0.2;
     pos.current.y += (mouse.current.y - pos.current.y) * 0.2;
 
     if (cursorRef.current) {
@@ -50,7 +44,7 @@ const CustomCursor = () => {
   useEffect(() => {
     requestRef.current = requestAnimationFrame(animate);
     return () => {
-      if (requestRef.current) cancelAnimationFrame(requestRef.current);
+      if (requestRef.current !== null) cancelAnimationFrame(requestRef.current);
     };
   }, []);
 
@@ -58,8 +52,8 @@ const CustomCursor = () => {
     <div
       ref={cursorRef}
       style={{ whiteSpace: "nowrap" }}
-      className={`z-10 fixed pointer-events-none flex items-center justify-center
-        bg-white/20 backdrop-blur-[px] text-black text-xs
+      className={`z-50 fixed pointer-events-none flex items-center justify-center
+        bg-white/20 backdrop-blur-[12px] text-black text-xs
         transition-all duration-200 ease-out
         ${
           hovering
@@ -68,7 +62,7 @@ const CustomCursor = () => {
         }`}
     >
       {hovering && (
-        <span className="font-mono uppercase font-semibold text-pf-white-01 transition-all duration-200 ease-out">
+        <span className="font-mono uppercase text-pf-white-01 transition-all duration-200 ease-out">
           see case
         </span>
       )}
