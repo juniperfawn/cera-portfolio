@@ -28,7 +28,6 @@ function App() {
         <Button title="LIVE SITE" link="" />
         <Button title="LIVE SITE" link="" />
       </div>
-      <Button title="LIVE stinky" link="" />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
