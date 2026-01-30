@@ -53,7 +53,7 @@ const CustomCursor = () => {
       ref={cursorRef}
       style={{ whiteSpace: "nowrap" }}
       className={`z-50 fixed pointer-events-none flex items-center justify-center
-        bg-white/20 backdrop-blur-[12px] text-black text-xs
+        bg-black/20 backdrop-blur-[12px] text-black text-xs
         transition-all duration-200 ease-out
         ${
           hovering
