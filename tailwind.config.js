@@ -8,6 +8,7 @@ export default {
         "pf-white-01-20": "#FFFFFF33",
         "pf-black-01": "#000000",
         "pf-black-01-20": "#00000033",
+        "pf-gray-01": "#777777",
         "pf-red-01": "#521B1B",
         "client-gray-01": "#B7B7B7",
         "client-blue-01": "#1E469B",
