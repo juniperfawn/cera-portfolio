@@ -8,7 +8,7 @@ export const Button = ({
   onClick,
 }: ButtonProps) => {
   const baseClasses =
-    "group backdrop-blur-md uppercase inline-flex items-center text-xs rounded-3xl px-4 py-2 font-mono transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pf-red-01 motion-safe:transition-all motion-reduce:transition-none";
+    "group backdrop-blur-md uppercase inline-flex items-center text-sm lg:text-xs rounded-3xl px-6 py-3 lg:px-4 lg:py-2 font-mono transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pf-red-01 motion-safe:transition-all motion-reduce:transition-none";
 
   const className = `${baseClasses} ${backgroundColor} ${textColor}`;
 
@@ -17,7 +17,7 @@ export const Button = ({
       <span
         aria-hidden="true"
         className="
-          mr-1 opacity-0 -translate-x-1
+          mr-1 lg:opacity-0 lg:-translate-x-1
           transition-all duration-200
           group-hover:opacity-100
           group-hover:translate-x-0
