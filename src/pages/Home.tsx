@@ -38,9 +38,9 @@ export default function Home() {
                 cta="see more"
               />
               <ShortCutCard
-                title="arcé studios"
+                title="about"
                 subtitle="Figma, Framer, Shopify"
-                link=""
+                link="/about"
                 image="/images/haga-cover.png"
                 cta="see more"
               />

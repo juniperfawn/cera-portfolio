@@ -11,7 +11,6 @@ export default function ShortCutCard({
     <a
       data-hover="true"
       href={link}
-      target="_blank"
       rel="noopener noreferrer"
       className="flex gap-2 text-black text-left group
                    focus:outline-none focus-visible:ring-2
