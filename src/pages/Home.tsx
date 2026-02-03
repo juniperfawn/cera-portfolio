@@ -1,6 +1,7 @@
 import CustomCursor from "../components/atoms/custom-cursor/custom-cursor";
 import PortfolioCard from "../components/molecules/portfolio-card/portfolio-card";
 import ShortCutCard from "../components/molecules/short-cut-card/short-cut-card";
+import Nav from "../components/organisms/nav";
 
 export default function Home() {
   return (
@@ -8,6 +9,9 @@ export default function Home() {
       <>
         <CustomCursor />
         <div className="relative z-0">
+          <div className="sticky top-0 z-40">
+            <Nav />
+          </div>
           <div className="flex flex-col md:flex-row md:justify-between px-2 py-[100px]">
             <div className="flex justify-center pb-2 md:pb-0 md:justify-between md:w-1/3">
               <h2 className="font-sans font-semibold text-pf-black-01">
