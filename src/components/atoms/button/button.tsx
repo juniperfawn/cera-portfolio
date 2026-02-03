@@ -32,12 +32,7 @@ export const Button = ({
 
   if (link) {
     return (
-      <a
-        href={link}
-        className={className}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href={link} className={className} rel="noopener noreferrer">
         {content}
       </a>
     );

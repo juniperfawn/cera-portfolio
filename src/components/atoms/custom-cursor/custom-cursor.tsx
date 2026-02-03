@@ -63,7 +63,7 @@ const CustomCursor = () => {
     >
       {hovering && (
         <span className="font-mono uppercase text-pf-white-01 transition-all duration-200 ease-out">
-          see case
+          see more
         </span>
       )}
     </div>
