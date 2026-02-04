@@ -2,6 +2,7 @@ import CustomCursor from "../components/atoms/custom-cursor/custom-cursor";
 import PortfolioCard from "../components/molecules/portfolio-card/portfolio-card";
 import ShortCutCard from "../components/molecules/short-cut-card/short-cut-card";
 import Nav from "../components/organisms/nav";
+import { projects } from "../data/projects";
 
 export default function Home() {
   return (
@@ -50,7 +51,25 @@ export default function Home() {
               />
             </div>
           </div>
+
           <div className="flex flex-col gap-2 px-2">
+            <h2 className="md:hidden font-sans font-semibold text-pf-black-01">
+              Select Works
+            </h2>
+
+            {projects.map((project) => (
+              <div key={project.slug} className="h-[300px] lg:h-[600px]">
+                <PortfolioCard
+                  title={project.title}
+                  tech={project.techStack.join(", ")}
+                  link={`/projects/${project.slug}`}
+                  image={project.cardImage}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* <div className="flex flex-col gap-2 px-2">
             <h2 className="md:hidden font-sans font-semibold text-pf-black-01">
               Select Works
             </h2>
@@ -94,7 +113,7 @@ export default function Home() {
                 image="/images/deb-cover.png"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </>
     </main>

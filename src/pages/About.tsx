@@ -51,7 +51,7 @@ export default function About() {
               vel interdum. Integer sit amet ultricies magna. Fusce ac varius
               magna. Nunc rutrum aliquet rhoncus.
             </p>
-            <div className="flex flex-col gap-8 pt-8">
+            <div className="flex flex-col gap-8 pt-8 text-sm">
               <Stat title="Year" stats={["2026"]} />
               <Stat
                 title="Tech Stack"
