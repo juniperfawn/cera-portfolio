@@ -11,7 +11,6 @@ export default function PortfolioCard({
     <a
       data-hover="true"
       href={link}
-      target="_blank"
       rel="noopener noreferrer"
       className="relative block group overflow-hidden rounded-lg w-full h-full"
       {...rest} // Allows className or other anchor props
