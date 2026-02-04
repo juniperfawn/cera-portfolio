@@ -1,6 +1,7 @@
 import { Button } from "../components/atoms/button/button";
 import Nav from "../components/organisms/nav";
 import CustomCursor from "../components/atoms/custom-cursor/custom-cursor";
+import Stat from "../components/atoms/stat/stat";
 
 export default function About() {
   return (
@@ -18,7 +19,7 @@ export default function About() {
           />
         </div>
 
-        <div className="lg:w-1/2 flex flex-col-reverse lg:flex-col justify-center gap-8 px-6 lg:px-12 pb-10">
+        <div className="lg:w-1/2 flex flex-col-reverse lg:flex-col justify-end gap-8 px-6 lg:px-12 pb-10">
           <div className="flex justify-center lg:justify-normal flex-wrap gap-6">
             <Button
               title="Linkedin"
@@ -50,6 +51,22 @@ export default function About() {
               vel interdum. Integer sit amet ultricies magna. Fusce ac varius
               magna. Nunc rutrum aliquet rhoncus.
             </p>
+            <div className="flex flex-col gap-8 pt-8">
+              <Stat title="Year" stats={["2026"]} />
+              <Stat
+                title="Tech Stack"
+                stats={[
+                  "Javascript",
+                  "Typescript",
+                  "React",
+                  "Next.js",
+                  "Figma",
+                  "Framer",
+                  "Adobe Creative Suite",
+                ]}
+              />
+              <Stat title="Role" stats={["Designer", "Developer"]} />
+            </div>
           </div>
         </div>
       </div>
