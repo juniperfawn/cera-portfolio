@@ -17,8 +17,8 @@ export default {
         "client-red-01": "#FF0000",
       },
       fontFamily: {
-        mono: ["DM Mono", "monospace"], // for code or monospace usage
-        sans: ["Oriya Sangam MN", "system-ui", "sans-serif"], // for regular text
+        mono: ["DM Mono", "monospace"],
+        sans: ["Oriya Sangam MN", "system-ui", "sans-serif"],
       },
     },
   },

@@ -2,11 +2,11 @@ export const projects = [
     {
       slug: "arce-studios",
       title: "arcé studios",
-      year: 2024,
+      year: 2025,
       techStack: ["Figma", "Framer", "Shopify"],
-      roles: ["Design", "Frontend Development"],
+      roles: ["Design", "Development"],
       caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque leo eros, tristique eu venenatis et, aliquam eu dolor. Ut ac massa mattis, rhoncus ante vel, lobortis tortor. Vestibulum et nibh sit amet lectus iaculis varius. Proin in augue libero. Mauris sit amet viverra arcu, ac cursus magna. Sed in bibendum mauris. Praesent at dui neque. Praesent nec ultricies diam, a bibendum erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis ante vitae justo pretium, a iaculis neque malesuada. Nunc euismod metus sed sodales pulvinar.",
-      liveUrl: "https://arcestudios.com",
+      liveUrl: "https://www.arcestudios.co/",
       buttonColor:"bg-client-gray-01",
       headerImage: "/images/arce-cover.png",
       projectImages: [
@@ -19,11 +19,11 @@ export const projects = [
     {
       slug: "colorado-energy-systems",
       title: "Colorado Energy Systems",
-      year: 2023,
+      year: 2026,
       techStack: ["Figma", "Framer"],
-      roles: ["Design"],
+      roles: ["Design", "Development"],
       caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque leo eros, tristique eu venenatis et, aliquam eu dolor. Ut ac massa mattis, rhoncus ante vel, lobortis tortor. Vestibulum et nibh sit amet lectus iaculis varius. Proin in augue libero. Mauris sit amet viverra arcu, ac cursus magna. Sed in bibendum mauris. Praesent at dui neque. Praesent nec ultricies diam, a bibendum erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis ante vitae justo pretium, a iaculis neque malesuada. Nunc euismod metus sed sodales pulvinar.",
-      liveUrl: "https://ces.com",
+      liveUrl: "https://coloradoenergysystems.com/",
       buttonColor:"bg-client-blue-01",
       headerImage: "/images/ces-cover.png",
       projectImages: [
@@ -36,11 +36,11 @@ export const projects = [
     {
       slug: "haga-direct",
       title: "HagaDirect",
-      year: 2024,
+      year: 2025,
       techStack: ["Next.js", "TypeScript", "Storyblok"],
       roles: ["Frontend Development"],
       caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque leo eros, tristique eu venenatis et, aliquam eu dolor. Ut ac massa mattis, rhoncus ante vel, lobortis tortor. Vestibulum et nibh sit amet lectus iaculis varius. Proin in augue libero. Mauris sit amet viverra arcu, ac cursus magna. Sed in bibendum mauris. Praesent at dui neque. Praesent nec ultricies diam, a bibendum erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis ante vitae justo pretium, a iaculis neque malesuada. Nunc euismod metus sed sodales pulvinar.",
-      liveUrl: "https://hagadirect.com",
+      liveUrl: "https://hagadirect.nl/",
       buttonColor:"bg-client-green-01",
       buttonTextColor: "text-pf-black-01",
       headerImage: "/images/haga-cover.png",
@@ -51,5 +51,39 @@ export const projects = [
       ],
       cardImage: "/images/haga-cover.png",
     },
+    {
+      slug: "klaus-kocher-fotograf",
+      title: "Klaus Kocher Fotograf",
+      year: 2025,
+      techStack: ["Figma", "Framer"],
+      roles: ["Design", "Development"],
+      caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque leo eros, tristique eu venenatis et, aliquam eu dolor. Ut ac massa mattis, rhoncus ante vel, lobortis tortor. Vestibulum et nibh sit amet lectus iaculis varius. Proin in augue libero. Mauris sit amet viverra arcu, ac cursus magna. Sed in bibendum mauris. Praesent at dui neque. Praesent nec ultricies diam, a bibendum erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis ante vitae justo pretium, a iaculis neque malesuada. Nunc euismod metus sed sodales pulvinar.",
+      liveUrl: "https://klauskocherfotograf.com/",
+      buttonColor:"bg-client-red-01",
+      headerImage: "/images/klaus-cover.png",
+      projectImages: [
+        "/images/ces-cover.png",
+        "/images/ces-cover.png",
+        "/images/ces-cover.png",
+      ],
+      cardImage: "/images/klaus-cover.png",
+    },
+    {
+      slug: "deb-shannan-photography",
+      title: "DB Shannan Photography",
+      year: 2026,
+      techStack: ["Figma", "Framer"],
+      roles: ["Design", "Development"],
+      caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque leo eros, tristique eu venenatis et, aliquam eu dolor. Ut ac massa mattis, rhoncus ante vel, lobortis tortor. Vestibulum et nibh sit amet lectus iaculis varius. Proin in augue libero. Mauris sit amet viverra arcu, ac cursus magna. Sed in bibendum mauris. Praesent at dui neque. Praesent nec ultricies diam, a bibendum erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis ante vitae justo pretium, a iaculis neque malesuada. Nunc euismod metus sed sodales pulvinar.",
+      liveUrl: "https://hagadirect.com",
+      buttonColor:"bg-client-blue-02",
+      headerImage: "/images/deb-cover.png",
+      projectImages: [
+        "/images/ces-cover.png",
+        "/images/ces-cover.png",
+        "/images/ces-cover.png",
+      ],
+      cardImage: "/images/deb-cover.png",
+    }
   ];
   
