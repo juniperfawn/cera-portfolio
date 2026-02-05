@@ -3,7 +3,7 @@ import { Button } from "../../atoms/button/button";
 import Stat from "../../atoms/stat/stat";
 import Nav from "../../organisms/nav";
 import CustomCursor from "../../atoms/custom-cursor/custom-cursor";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 // Animation variants
 const pageVariants = {

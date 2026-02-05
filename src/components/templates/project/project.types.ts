@@ -8,6 +8,6 @@ export type ProjectProps = {
     buttonColor: string;
     buttonTextColor?: string;
     headerImage: string;
-    projectImages: [string, string, string];
+    projectImages: string[];
   };
   
