@@ -134,7 +134,17 @@ export default function ProjectTemplate({
                   />
                 )}
 
-                {item.type === "custom" && renderGalleryBlock(item.block)}
+                {item.type === "custom" && (
+                  <div
+                    data-hover="interact with me"
+                    className="w-full h-full relative"
+                  >
+                    <p className="text-pf-white-01 font-mono text-sm md:hidden absolute inset-0 z-50 top-8 pointer-events-none">
+                      INTERACT WITH ME
+                    </p>
+                    {renderGalleryBlock(item.block)}
+                  </div>
+                )}
               </Reveal>
             );
           })}
