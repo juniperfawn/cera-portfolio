@@ -3,7 +3,7 @@ import { Button } from "../atoms/button/button";
 const Nav = () => {
   return (
     <div className="flex gap-2 justify-center pt-4">
-      <Button title="work" backgroundColor="bg-pf-black-01-20" link="/" />
+      <Button title="work" backgroundColor="bg-pf-black-01-20" link="/#work" />
       <div className="hidden lg:block">
         <Button
           title="Cera Kocher Portfolio"

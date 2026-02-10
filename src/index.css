@@ -25,9 +25,6 @@ a {
 }
 
 body {
-  /* display: flex;
-  place-items: center;*/
-  /* cursor: none; */
   margin: 0;
   min-width: 320px;
   min-height: 100vh;

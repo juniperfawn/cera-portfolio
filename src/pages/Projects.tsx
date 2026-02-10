@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import { projects } from "../data/projects";
-import ProjectTemplate from "../components/templates/project/project";
+import { projects } from "@/data/projects";
+import ProjectTemplate from "@/components/templates/project/project";
 
 export default function Project() {
   const { slug } = useParams<{ slug: string }>();
