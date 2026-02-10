@@ -1,24 +1,38 @@
 import { useEffect, useRef, useState } from "react";
 
+const DEFAULT_TEXT = "see more";
+
 const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const requestRef = useRef<number | null>(null);
   const mouse = useRef({ x: 0, y: 0 });
   const pos = useRef({ x: 0, y: 0 });
-  const [hovering, setHovering] = useState(false);
 
-  // Track mouse position
+  const [hovering, setHovering] = useState(false);
+  const [hoverText, setHoverText] = useState<string>(DEFAULT_TEXT);
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
 
-      // Detect hover using elementFromPoint
       const el = document.elementFromPoint(
         e.clientX,
         e.clientY
       ) as HTMLElement | null;
-      if (el?.closest("[data-hover='true']")) {
+
+      const hoverEl = el?.closest("[data-hover]") as HTMLElement | null;
+
+      if (hoverEl) {
+        const value = hoverEl.dataset.hover;
+
+        // React turns `data-hover` into "true"
+        if (!value || value === "true") {
+          setHoverText(DEFAULT_TEXT);
+        } else {
+          setHoverText(value);
+        }
+
         setHovering(true);
       } else {
         setHovering(false);
@@ -29,7 +43,6 @@ const CustomCursor = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Smooth cursor animation
   const animate = () => {
     pos.current.x += (mouse.current.x - pos.current.x) * 0.2;
     pos.current.y += (mouse.current.y - pos.current.y) * 0.2;
@@ -44,7 +57,9 @@ const CustomCursor = () => {
   useEffect(() => {
     requestRef.current = requestAnimationFrame(animate);
     return () => {
-      if (requestRef.current !== null) cancelAnimationFrame(requestRef.current);
+      if (requestRef.current !== null) {
+        cancelAnimationFrame(requestRef.current);
+      }
     };
   }, []);
 
@@ -63,7 +78,7 @@ const CustomCursor = () => {
     >
       {hovering && (
         <span className="font-mono uppercase text-pf-white-01 transition-all duration-200 ease-out">
-          see more
+          {hoverText}
         </span>
       )}
     </div>
