@@ -1,37 +1,17 @@
-import { Button } from "../components/atoms/button/button";
-import Nav from "../components/organisms/nav";
-import CustomCursor from "../components/atoms/custom-cursor/custom-cursor";
-import Stat from "../components/atoms/stat/stat";
+import { Button } from "@/components/atoms/button/button";
+import Nav from "@/components/organisms/nav";
+import CustomCursor from "@/components/atoms/custom-cursor/custom-cursor";
+import Stat from "@/components/atoms/stat/stat";
+import Reveal from "@/components/motion/reveal";
+
 import { motion } from "framer-motion";
-
-// Animation variants
-const pageVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const staggerContainer = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
-};
+import { pageFade, fadeUp, stagger, navEntrance } from "@/utils/motion";
 
 export default function About() {
   return (
-    <motion.div
+    <motion.main
       className="relative"
-      variants={pageVariants}
+      variants={pageFade}
       initial="hidden"
       animate="show"
     >
@@ -39,9 +19,7 @@ export default function About() {
 
       {/* Navbar */}
       <motion.div
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
+        {...navEntrance}
         className="absolute top-0 z-40 w-full px-2 lg:px-12"
       >
         <Nav />
@@ -49,23 +27,18 @@ export default function About() {
 
       <div className="lg:flex lg:min-h-screen box-border">
         {/* Profile Image */}
-        <motion.div
-          className="lg:w-1/2 h-auto pb-6 lg:pb-0"
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-        >
+        <Reveal className="lg:w-1/2 h-auto pb-6 lg:pb-0">
           <img
             src="/images/profile.jpg"
             alt="Cera standing in London"
             className="p-2 w-full lg:h-full lg:w-full object-cover rounded-2xl"
           />
-        </motion.div>
+        </Reveal>
 
         {/* Info + Buttons */}
         <motion.div
           className="lg:w-1/2 flex flex-col-reverse lg:flex-col justify-end gap-8 px-6 lg:px-12 pb-10"
-          variants={staggerContainer}
+          variants={stagger}
           initial="hidden"
           animate="show"
         >
@@ -109,7 +82,7 @@ export default function About() {
               magna. Nunc rutrum aliquet rhoncus.
             </p>
 
-            {/* Stats with scroll-triggered animation */}
+            {/* Stats */}
             <div className="flex flex-col gap-8 pt-8 text-sm">
               {[
                 { title: "Year", stats: ["2026"] },
@@ -127,24 +100,14 @@ export default function About() {
                 },
                 { title: "Role", stats: ["Designer", "Developer"] },
               ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.6,
-                    ease: [0.25, 0.1, 0.25, 1],
-                    delay: index * 0.15,
-                  }}
-                >
+                <Reveal key={index}>
                   <Stat title={item.title} stats={item.stats} />
-                </motion.div>
+                </Reveal>
               ))}
             </div>
           </motion.div>
         </motion.div>
       </div>
-    </motion.div>
+    </motion.main>
   );
 }

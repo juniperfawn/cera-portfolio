@@ -1,4 +1,24 @@
+export type ProjectGalleryItem =
+  | {
+      type: "image";
+      src: string;
+      alt?: string;
+    }
+  | {
+      type: "video";
+      src: string;
+      poster?: string;
+      autoPlay?: boolean;
+      loop?: boolean;
+    }
+  | {
+    type: "custom";
+    block: string;
+    props?: Record<string, unknown>;
+    };
+
 export type ProjectProps = {
+    slug: string;
     title: string;
     year: string | number;
     techStack: string[];
@@ -8,6 +28,6 @@ export type ProjectProps = {
     buttonColor: string;
     buttonTextColor?: string;
     headerImage: string;
-    projectImages: string[];
+    projectGallery: ProjectGalleryItem[];
   };
   

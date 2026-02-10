@@ -1,30 +1,14 @@
 import type { ProjectProps } from "./project.types";
-import { Button } from "../../atoms/button/button";
-import Stat from "../../atoms/stat/stat";
-import Nav from "../../organisms/nav";
-import Footer from "../../organisms/footer";
-import CustomCursor from "../../atoms/custom-cursor/custom-cursor";
+import { Button } from "@/components/atoms/button/button";
+import Stat from "@/components/atoms/stat/stat";
+import Nav from "@/components/organisms/nav";
+import Footer from "@/components/organisms/footer";
+import CustomCursor from "@/components/atoms/custom-cursor/custom-cursor";
+import { renderGalleryBlock } from "./project-gallery/gallery-renderer";
+import Reveal from "@/components/motion/reveal";
+
 import { motion } from "framer-motion";
-
-// Animation variants
-const pageVariants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const } },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { delay: 0.6, duration: 0.6, ease: "easeOut" as const },
-  },
-};
-
-const staggerContainer = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
-};
+import { pageFade, fadeUp, stagger, navEntrance } from "@/utils/motion";
 
 export default function ProjectTemplate({
   title,
@@ -36,13 +20,13 @@ export default function ProjectTemplate({
   buttonColor,
   buttonTextColor,
   headerImage,
-  projectImages,
+  projectGallery,
 }: ProjectProps) {
   return (
     <>
       <motion.section
         className="relative"
-        variants={pageVariants}
+        variants={pageFade}
         initial="hidden"
         animate="show"
       >
@@ -50,9 +34,7 @@ export default function ProjectTemplate({
 
         {/* Navbar */}
         <motion.div
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
+          {...navEntrance}
           className="fixed top-0 left-0 right-0 z-50"
         >
           <Nav />
@@ -61,6 +43,7 @@ export default function ProjectTemplate({
         {/* Project header */}
         <header className="relative">
           <div className="absolute inset-1 bg-black/10 rounded-2xl z-10" />
+
           <motion.h1
             variants={fadeUp}
             initial="hidden"
@@ -69,23 +52,22 @@ export default function ProjectTemplate({
           >
             {title}
           </motion.h1>
-          <motion.img
-            src={headerImage}
-            alt={`${title} header`}
-            initial={{ scale: 1.05, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full rounded-2xl object-cover p-1 lg:h-[640px]"
-          />
+
+          <Reveal>
+            <img
+              src={headerImage}
+              alt={`${title} header`}
+              className="w-full rounded-2xl object-cover p-1 lg:h-[640px]"
+            />
+          </Reveal>
         </header>
 
         {/* Project stats + description */}
         <motion.section
           className="flex flex-col-reverse gap-10 px-6 py-8 lg:gap-0 lg:py-16 lg:items-center lg:flex-row"
-          variants={staggerContainer}
+          variants={stagger}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
+          animate="show"
         >
           {/* Project stats */}
           <motion.aside
@@ -122,22 +104,38 @@ export default function ProjectTemplate({
 
         {/* Project gallery */}
         <section className="grid md:grid-cols-2 gap-1 p-1 lg:gap-2 lg:pt-2 lg:px-2">
-          {projectImages.map((image, index) => {
-            const isLast = index === projectImages.length - 1;
+          {projectGallery?.map((item, index) => {
+            const isLast = index === projectGallery.length - 1;
 
             return (
-              <motion.img
+              <Reveal
                 key={index}
-                src={image}
-                alt={`${title} screenshot ${index + 1}`}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className={`w-full rounded-lg object-cover ${
-                  isLast ? "md:col-span-2" : ""
+                className={`w-full rounded-lg overflow-hidden ${
+                  isLast ? "md:col-span-2" : "max-h-[1000px]"
                 }`}
-              />
+              >
+                {item.type === "image" && (
+                  <img
+                    src={item.src}
+                    alt={item.alt ?? `${title} screenshot ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                )}
+
+                {item.type === "video" && (
+                  <video
+                    src={item.src}
+                    poster={item.poster}
+                    autoPlay={item.autoPlay}
+                    loop={item.loop}
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                )}
+
+                {item.type === "custom" && renderGalleryBlock(item.block)}
+              </Reveal>
             );
           })}
         </section>
