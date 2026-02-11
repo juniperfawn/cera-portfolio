@@ -96,6 +96,7 @@ export default function ProjectTemplate({
                   link={liveUrl}
                   backgroundColor={buttonColor}
                   textColor={buttonTextColor}
+                  target="_blank"
                 />
               </div>
             </div>

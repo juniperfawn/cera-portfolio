@@ -29,7 +29,7 @@ export default function About() {
         {/* Profile Image */}
         <Reveal className="lg:w-1/2 h-auto pb-6 lg:pb-0">
           <img
-            src="/images/profile.jpg"
+            src="/images/profile.png"
             alt="Cera standing in London"
             className="p-2 w-full lg:h-full lg:w-full object-cover rounded-2xl"
           />
@@ -52,12 +52,14 @@ export default function About() {
               link="https://www.linkedin.com/in/cera-kocher"
               textColor="text-pf-white-01"
               backgroundColor="bg-client-blue-01"
+              target="_blank"
             />
             <Button
               title="CV Resume"
               link=""
               textColor="text-pf-white-01"
               backgroundColor="bg-client-blue-01"
+              target="_blank"
             />
             <Button
               title="Contact"

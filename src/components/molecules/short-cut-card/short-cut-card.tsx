@@ -6,17 +6,19 @@ export default function ShortCutCard({
   cta,
   link,
   image,
+  target,
 }: ShortCutCardProps) {
   return (
     <a
       data-hover="true"
       href={link}
-      rel="noopener noreferrer"
-      className="flex gap-2 text-black text-left group
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : undefined}
+      className="grid grid-cols-[280px_1fr] sm:grid-cols-[420px_1fr] md:grid-cols-[180px_1fr] gap-3 group text-black text-left group
                    focus:outline-none focus-visible:ring-2
                    focus-visible:ring-black focus-visible:ring-offset-2"
     >
-      <div className="relative overflow-hidden rounded-md w-full md:w-[180px] h-[180px]">
+      <div className="relative overflow-hidden rounded-md w-full md:w-[180px] h-[180px] md:shrink-0">
         <img
           src={image}
           alt={`${title} preview`}
