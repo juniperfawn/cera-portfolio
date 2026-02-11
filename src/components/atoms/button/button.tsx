@@ -4,6 +4,7 @@ export const Button = ({
   title,
   backgroundColor = "bg-pf-white-01-20",
   textColor = "text-pf-white-01",
+  target,
   link,
   onClick,
 }: ButtonProps) => {
@@ -32,7 +33,12 @@ export const Button = ({
 
   if (link) {
     return (
-      <a href={link} className={className} rel="noopener noreferrer">
+      <a
+        href={link}
+        className={className}
+        target={target}
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
+      >
         {content}
       </a>
     );

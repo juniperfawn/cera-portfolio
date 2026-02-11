@@ -58,6 +58,7 @@ export default function Home() {
                   link={card.link}
                   image={card.image}
                   cta={card.cta}
+                  target={card.target}
                 />
               </motion.div>
             ))}
@@ -82,7 +83,6 @@ export default function Home() {
           ))}
         </section>
       </motion.main>
-
       <Footer />
     </>
   );

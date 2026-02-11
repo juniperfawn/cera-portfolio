@@ -4,4 +4,5 @@ export type ShortCutCardProps = {
   cta: string;
   link: string;
   image: string;
+  target?: "_blank" | "_self";
 } 

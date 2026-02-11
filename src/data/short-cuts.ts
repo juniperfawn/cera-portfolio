@@ -1,9 +1,13 @@
-export const shortCuts = [
+import type { ShortCutCardProps } from "@/components/molecules/short-cut-card/short-cut-card.types";
+
+
+export const shortCuts: (ShortCutCardProps)[] = [
     {
         title: "portfolio site",
         subtitle: "React, Typescript, Tailwind",
         link: "https://github.com/juniperfawn/cera-portfolio",
-        image: "/images/klaus/klaus-cover.png",
+        target: "_blank",
+        image: "/images/quick-link-github.png",
         cta: "see repo"
     },
     {
