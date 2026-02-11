@@ -4,6 +4,7 @@ import ShortCutCard from "@/components/molecules/short-cut-card/short-cut-card";
 import Nav from "@/components/organisms/nav";
 import Footer from "@/components/organisms/footer";
 import Reveal from "@/components/motion/reveal";
+import Hero from "@/components/organisms/hero";
 
 import { projects } from "@/data/projects";
 import { shortCuts } from "@/data/short-cuts";
@@ -23,9 +24,14 @@ export default function Home() {
         <CustomCursor />
 
         {/* Navbar */}
-        <motion.div {...navEntrance} className="sticky top-0 z-40">
+        <motion.div
+          {...navEntrance}
+          className="fixed left-0 right-0 top-0 z-40"
+        >
           <Nav />
         </motion.div>
+
+        <Hero />
 
         {/* Quick Links Section */}
         <motion.section
