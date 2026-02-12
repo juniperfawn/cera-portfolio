@@ -4,7 +4,7 @@ import Stat from "@/components/atoms/stat/stat";
 import Nav from "@/components/organisms/nav";
 import Footer from "@/components/organisms/footer";
 import CustomCursor from "@/components/atoms/custom-cursor/custom-cursor";
-import { renderGalleryBlock } from "./project-gallery/gallery-renderer";
+import { renderGalleryBlock } from "../../molecules/project-gallery/gallery-renderer";
 import Reveal from "@/components/motion/reveal";
 
 import { motion } from "framer-motion";
@@ -89,7 +89,9 @@ export default function ProjectTemplate({
                 </p>
                 <h1 className="text-2xl font-bold">{title}</h1>
               </div>
-              <p className="text-sm lg:w-10/12">{caption}</p>
+              <p className="text-sm lg:w-10/12 whitespace-pre-line text-pf-black-01/70">
+                {caption}
+              </p>
               <div data-hover="true">
                 <Button
                   title="View Live Site"
