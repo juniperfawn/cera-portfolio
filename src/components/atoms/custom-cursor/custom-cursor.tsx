@@ -18,7 +18,7 @@ const CustomCursor = () => {
 
       const el = document.elementFromPoint(
         e.clientX,
-        e.clientY
+        e.clientY,
       ) as HTMLElement | null;
 
       const hoverEl = el?.closest("[data-hover]") as HTMLElement | null;
@@ -67,7 +67,7 @@ const CustomCursor = () => {
     <div
       ref={cursorRef}
       style={{ whiteSpace: "nowrap" }}
-      className={`z-50 fixed pointer-events-none flex items-center justify-center
+      className={`hidden z-50 fixed pointer-events-none md:flex items-center justify-center
         bg-black/20 backdrop-blur-[12px] text-black text-xs
         transition-all duration-200 ease-out
         ${
