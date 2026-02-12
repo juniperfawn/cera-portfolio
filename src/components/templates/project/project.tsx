@@ -4,7 +4,7 @@ import Stat from "@/components/atoms/stat/stat";
 import Nav from "@/components/organisms/nav";
 import Footer from "@/components/organisms/footer";
 import CustomCursor from "@/components/atoms/custom-cursor/custom-cursor";
-import { renderGalleryBlock } from "../../molecules/project-gallery/gallery-renderer";
+import { renderGalleryBlock } from "@/components/molecules/project-gallery/gallery-renderer";
 import Reveal from "@/components/motion/reveal";
 
 import { motion } from "framer-motion";
