@@ -76,22 +76,25 @@ export default function About() {
           >
             <h2 className="font-bold text-2xl pb-3">Cera Contesse Kocher</h2>
             <p className="text-sm text-pf-black-01/70">
-              I’m a Swiss American creative developer & designer originally from
-              Colorado, USA, but currently based between the Netherlands and the
-              USA.
+              I’m a Swiss-American creative developer & designer currently local
+              to Colorado.
               <br />
               <br />
-              My design journey has taken me through graphic design, 3D
-              modeling, photography, web design, web development, animation, the
-              list keeps growing. This same curiosity and sense of exploration
-              fuels my personal adventures. I’ve been a certified white-water
-              raft guide, competed in martial arts, traveled the world solo, and
-              even moved abroad on my own.
+              My background spans both design and engineering, with experience
+              in graphic design, game dev, and photography as well as web design
+              and development. I’m particularly interested in the space where
+              visual thinking and technical execution meet, building work that
+              is both visually thoughtful and functional.
               <br />
-              <br /> I’ve always been one to explore concepts, skills, and even
-              places that have interested me and help me grow as a person. I
-              believe pushing my personal and creative boundaries will always be
-              a core part of who I am.
+              <br /> I’ve worked across different teams and disciplines, often
+              in international environments, which has shaped how I communicate,
+              collaborate, and approach problem-solving.
+              <br />
+              <br /> Outside of work, I follow the same curiosity through
+              Colorado’s outdoor sports, co-founding a fashion brand, training
+              in martial arts, and traveling and living abroad. Those
+              experiences continue to influence how I adapt, learn, and take on
+              new challenges.
             </p>
 
             {/* Stats */}
